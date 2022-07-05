@@ -1,4 +1,4 @@
-package com.example.springboot.app.exception;
+package com.airport.ev.exception;
 
 
 public class Mensaje {

@@ -1,4 +1,4 @@
-package com.example.springboot.app.exception;
+package com.airport.ev.exception;
 
 import org.springframework.web.bind.annotation.ResponseStatus;
 

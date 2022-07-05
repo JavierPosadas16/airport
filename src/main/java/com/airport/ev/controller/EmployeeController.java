@@ -1,7 +1,7 @@
 package com.airport.ev.controller;
+import com.airport.ev.exception.Mensaje;
 import com.airport.ev.model.Employee;
 import com.airport.ev.service.EmployeeService;
-import com.example.springboot.app.exception.Mensaje;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -19,7 +19,7 @@ public class EmployeeController {
 	public ResponseEntity<?> getAllEmployee() {
 		List<Employee> lista = employeeService.getAllEmployee();
 		if(lista.isEmpty()){
-			return new ResponseEntity<>(new Mensaje("Sin producos en la Base de Datos"), HttpStatus.BAD_REQUEST);
+			return new ResponseEntity<>(new Mensaje("Sin Info en la Base de Datos"), HttpStatus.BAD_REQUEST);
 		}
 		return ResponseEntity.ok().body(employeeService.getAllEmployee());
 	}
