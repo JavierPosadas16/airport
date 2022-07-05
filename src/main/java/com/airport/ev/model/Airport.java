@@ -1,6 +1,7 @@
 package com.airport.ev.model;
 
 import javax.persistence.*;
+import java.util.List;
 
 
 @Entity
@@ -13,6 +14,9 @@ public class Airport {
 
     @Column(name = "name")
     private String name;
+
+    @OneToMany(mappedBy = "airport")
+    private List<Airport> airport;
 
     public long getId() {
         return id;
@@ -29,5 +33,6 @@ public class Airport {
     public void setname(String name) {
         this.name = name;
     }
+
 
 }

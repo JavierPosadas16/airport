@@ -1,6 +1,7 @@
 package com.airport.ev.model;
 
 import javax.persistence.*;
+import java.util.List;
 
 
 @Entity
@@ -16,6 +17,11 @@ public class Language {
 
     @Column(name = "name")
     private String name;
+
+    @OneToMany(mappedBy = "language")
+    private List<Language> language;
+
+
 
     public long getId() {
         return id;

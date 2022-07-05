@@ -17,6 +17,14 @@ public class Employee {
     @Column(name = "firstname")
     private String firsname;
 
+    @ManyToOne
+    @JoinColumn(name = "idlanguage")
+    private Language language;
+
+    @ManyToOne
+    @JoinColumn(name = "idcountry")
+    private Country country;
+
     public long getId() {
         return id;
     }

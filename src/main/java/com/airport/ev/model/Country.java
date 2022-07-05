@@ -1,6 +1,7 @@
 package com.airport.ev.model;
 
 import javax.persistence.*;
+import java.util.List;
 
 
 @Entity
@@ -16,6 +17,13 @@ public class Country {
 
     @Column(name = "name")
     private String name;
+
+    @ManyToOne
+    @JoinColumn(name = "idaereopuerto")
+    private Airport airport;
+
+    @OneToMany(mappedBy = "country")
+    private List<Country> country;
 
     public long getId() {
         return id;
