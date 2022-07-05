@@ -25,6 +25,22 @@ public class Employee {
     @JoinColumn(name = "idcountry")
     private Country country;
 
+    public Language getLanguage() {
+        return language;
+    }
+
+    public void setLanguage(Language language) {
+        this.language = language;
+    }
+
+    public Country getCountry() {
+        return country;
+    }
+
+    public void setCountry(Country country) {
+        this.country = country;
+    }
+
     public long getId() {
         return id;
     }

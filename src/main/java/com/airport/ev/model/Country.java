@@ -22,8 +22,24 @@ public class Country {
     @JoinColumn(name = "idaereopuerto")
     private Airport airport;
 
+    public Airport getAirport() {
+        return airport;
+    }
+
+    public void setAirport(Airport airport) {
+        this.airport = airport;
+    }
+
     @OneToMany(mappedBy = "country")
     private List<Country> country;
+
+    public List<Country> getCountry() {
+        return country;
+    }
+
+    public void setCountry(List<Country> country) {
+        this.country = country;
+    }
 
     public long getId() {
         return id;

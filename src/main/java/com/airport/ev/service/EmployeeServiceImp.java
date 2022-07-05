@@ -26,6 +26,8 @@ public class EmployeeServiceImp implements EmployeeService {
             updateEmployee.setId(employee.getId());
             updateEmployee.setSurname(employee.getSurname());
             updateEmployee.setFirsname(employee.getFirsname());
+            updateEmployee.setLanguage(employee.getLanguage());
+            updateEmployee.setCountry(employee.getCountry());
             updateEmployee(updateEmployee);
             return updateEmployee;
         } else {

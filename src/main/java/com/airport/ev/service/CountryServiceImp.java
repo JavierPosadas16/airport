@@ -24,6 +24,7 @@ public class CountryServiceImp implements CountryService {
             updateCountry.setId(country.getId());
             updateCountry.setCode(country.getCode());
             updateCountry.setName(country.getName());
+            updateCountry.setAirport(country.getAirport());
             updateCountry(updateCountry);
             return updateCountry;
         } else {
