@@ -8,18 +8,19 @@ import java.util.List;
 @Table(name = "country")
 public class Country {
 
-    @Id
+
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
     @Column(name = "code")
     private String code;
-
+    @Id
     @Column(name = "name")
     private String name;
 
+
     @ManyToOne
-    @JoinColumn(name = "idaereopuerto")
+    @JoinColumn(name = "aereopuerto")
     private Airport airport;
 
     public Airport getAirport() {
@@ -29,7 +30,6 @@ public class Country {
     public void setAirport(Airport airport) {
         this.airport = airport;
     }
-
     @OneToMany(mappedBy = "country")
     private List<Country> country;
 

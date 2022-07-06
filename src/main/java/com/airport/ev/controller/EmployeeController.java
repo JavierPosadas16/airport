@@ -9,10 +9,16 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/employee")
+@RequestMapping("/apiv1")
 public class EmployeeController {
 	@Autowired
 	private EmployeeService employeeService;
+
+	@PostMapping("/clientes/add")
+	public ResponseEntity<Employee> createEmployee(@RequestBody Employee employee) {
+		return ResponseEntity.ok().body(this.employeeService.createEmployee(employee));
+	}
+
 
 	//Lista todos los empleados
 	@GetMapping("/listaEmpleados")

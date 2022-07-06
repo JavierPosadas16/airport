@@ -1,7 +1,5 @@
 package com.airport.ev.service;
-import com.airport.ev.model.Country;
 import com.airport.ev.model.Employee;
-import com.airport.ev.repository.CountryRepository;
 import com.airport.ev.repository.EmployeeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -18,6 +16,17 @@ public class EmployeeServiceImp implements EmployeeService {
     private EmployeeRepository employeeRepository;
 
     @Override
+    public Employee createEmployee(Employee employee) {
+/***
+        LanguageServiceImp ln = new LanguageServiceImp();
+        CountryServiceImp co = new CountryServiceImp();
+        AirportServiceImp ai = new AirportServiceImp();
+        employeeRepository.save(employee);
+        ai.createAirport(employee.getAirport());***/
+
+        return employeeRepository.save(employee);
+    }
+    @Override
     public Employee updateEmployee(Employee employee) {
         Optional<Employee> EmployeeT = this.employeeRepository.findById(employee.getId());
 
@@ -25,7 +34,7 @@ public class EmployeeServiceImp implements EmployeeService {
             Employee updateEmployee = EmployeeT.get();
             updateEmployee.setId(employee.getId());
             updateEmployee.setSurname(employee.getSurname());
-            updateEmployee.setFirsname(employee.getFirsname());
+            updateEmployee.setFirstname(employee.getFirstname());
             updateEmployee.setLanguage(employee.getLanguage());
             updateEmployee.setCountry(employee.getCountry());
             updateEmployee(updateEmployee);

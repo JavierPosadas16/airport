@@ -8,13 +8,13 @@ import java.util.List;
 @Table(name = "language")
 public class Language {
 
-    @Id
+
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
     @Column(name = "code")
     private String code;
-
+    @Id
     @Column(name = "name")
     private String name;
 

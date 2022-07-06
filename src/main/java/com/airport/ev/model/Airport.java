@@ -8,10 +8,10 @@ import java.util.List;
 @Table(name = "airport")
 public class Airport {
 
-    @Id
+
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
-
+    @Id
     @Column(name = "name")
     private String name;
 

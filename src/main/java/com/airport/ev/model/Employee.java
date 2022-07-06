@@ -15,15 +15,26 @@ public class Employee {
     private String surname;
 
     @Column(name = "firstname")
-    private String firsname;
+    private String firstname;
 
     @ManyToOne
-    @JoinColumn(name = "idlanguage")
+    @JoinColumn(name = "country")
+    private Country country;
+    @ManyToOne
+    @JoinColumn(name = "language")
     private Language language;
 
     @ManyToOne
-    @JoinColumn(name = "idcountry")
-    private Country country;
+    @JoinColumn(name = "airport")
+    private Airport airport;
+
+    public Airport getAirport() {
+        return airport;
+    }
+
+    public void setAirport(Airport airport) {
+        this.airport = airport;
+    }
 
     public Language getLanguage() {
         return language;
@@ -57,11 +68,11 @@ public class Employee {
         this.surname = surname;
     }
 
-    public String getFirsname() {
-        return firsname;
+    public String getFirstname() {
+        return firstname;
     }
 
-    public void setFirsname(String firsname) {
-        this.firsname = firsname;
+    public void setFirstname(String firstname) {
+        this.firstname = firstname;
     }
 }

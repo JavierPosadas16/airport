@@ -1,5 +1,6 @@
 package com.airport.ev.service;
 import com.airport.ev.model.Airport;
+import com.airport.ev.model.Country;
 import com.airport.ev.repository.AirportRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -14,6 +15,12 @@ public class AirportServiceImp implements AirportService {
 
     @Autowired
     private AirportRepository airportRepository;
+
+    @Override
+    public Airport createAirport(Airport airport) {
+
+        return airportRepository.save(airport);
+    }
 
     @Override
     public Airport updateAirport(Airport airport) {

@@ -1,6 +1,6 @@
 package com.airport.ev.service;
 import com.airport.ev.model.Language;
-import com.airport.ev.repository.LenguageRepository;
+import com.airport.ev.repository.LanguageRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -13,7 +13,12 @@ import java.util.Optional;
 public class LanguageServiceImp implements LanguageService {
 
     @Autowired
-    private LenguageRepository languageRepository;
+    private LanguageRepository languageRepository;
+
+    @Override
+    public Language createLanguage(Language language) {
+        return languageRepository.save(language);
+    }
 
     @Override
     public Language updateLanguage(Language language) {

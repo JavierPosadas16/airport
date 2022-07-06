@@ -1,5 +1,6 @@
 package com.airport.ev.service;
 import com.airport.ev.model.Country;
+import com.airport.ev.model.Employee;
 import com.airport.ev.repository.CountryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -16,6 +17,11 @@ public class CountryServiceImp implements CountryService {
     private CountryRepository countryRepository;
 
     @Override
+    public Country createCountry(Country country) {
+        return countryRepository.save(country);
+    }
+
+    @Override
     public Country updateCountry(Country country) {
         Optional<Country> CountryT = this.countryRepository.findById(country.getId());
 
@@ -24,7 +30,7 @@ public class CountryServiceImp implements CountryService {
             updateCountry.setId(country.getId());
             updateCountry.setCode(country.getCode());
             updateCountry.setName(country.getName());
-            updateCountry.setAirport(country.getAirport());
+         //   updateCountry.setAirport(country.getAirport());
             updateCountry(updateCountry);
             return updateCountry;
         } else {
