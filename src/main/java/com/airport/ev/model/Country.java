@@ -20,7 +20,7 @@ public class Country {
 
 
     @ManyToOne
-    @JoinColumn(name = "aereopuerto")
+    @JoinColumn(name = "airport")
     private Airport airport;
 
     public Airport getAirport() {
@@ -37,9 +37,6 @@ public class Country {
         return country;
     }
 
-    public void setCountry(List<Country> country) {
-        this.country = country;
-    }
 
     public long getId() {
         return id;

@@ -24,17 +24,6 @@ public class Employee {
     @JoinColumn(name = "language")
     private Language language;
 
-    @ManyToOne
-    @JoinColumn(name = "airport")
-    private Airport airport;
-
-    public Airport getAirport() {
-        return airport;
-    }
-
-    public void setAirport(Airport airport) {
-        this.airport = airport;
-    }
 
     public Language getLanguage() {
         return language;
